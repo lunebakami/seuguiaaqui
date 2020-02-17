@@ -4,11 +4,15 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.1",
     "multer": "^1.4.2",
     "pg": "^7.18.1",
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.21.4",
+    "sequelize-cli": "^5.5.1",
     "yup": "^0.28.1"
   },
   "devDependencies": {
@@ -20,5 +24,8 @@
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
     "sucrase": "^3.12.1"
+  },
+  "scripts": {
+    "dev": "nodemon src/server.js"
   }
 }
