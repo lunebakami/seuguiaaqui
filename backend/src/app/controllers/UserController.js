@@ -23,13 +23,28 @@ class UserController {
       return res.status(400).json({ error: 'User already exists.' });
     }
 
-    const { id, name, email, enterprise } = await User.create(req.body);
+    const { id, name, email } = await User.create(req.body);
 
     return res.json({
       id,
       name,
       email,
-      enterprise,
+    });
+  }
+
+  async show(req, res) {
+    const { id } = req.params;
+
+    const user = await User.findByPk(id);
+
+    if (!user) {
+      return res.status(400).json({ error: "User doesn't exists" });
+    }
+
+    return res.json({
+      name: user.name,
+      email: user.email,
+      phone: user.phone,
     });
   }
 }
