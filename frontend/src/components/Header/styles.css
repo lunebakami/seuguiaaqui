@@ -1,0 +1,45 @@
+#header {
+  width: 100%;
+  height: 100px;
+
+  background-color: #3a0ca3;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h3 {
+  width: 400px;
+  margin-left: 30px;
+}
+
+div#actions {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+button {
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 15px;
+  height: 50px;
+}
+
+button#login {
+  background-color: #b5179e;
+  color: white;
+  width: 100px;
+}
+
+button#signin {
+  background-color: #b5179e;
+  color: white;
+  width: 160px;
+}
