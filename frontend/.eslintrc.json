@@ -31,9 +31,12 @@
         "react/prop-types": "off",
 
         "jsx-a11y/label-has-associated-control": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/no-static-element-interactions": "off",
         "camelcase": "off",
         "no-shadow": "off",
         "no-underscore-dangle": "off",
-        "no-console": "off"
+        "no-console": "off",
+        "no-unused-vars": "off"
     }
 }

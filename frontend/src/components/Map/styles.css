@@ -1,0 +1,8 @@
+div#map:focus,
+:active {
+  border-color: transparent;
+}
+
+div#map {
+  margin-top: 100px;
+}

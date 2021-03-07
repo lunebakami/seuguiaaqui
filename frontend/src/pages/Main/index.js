@@ -4,10 +4,10 @@ import Map from '../../components/Map';
 
 function Main() {
   return (
-    <div id="main">
+    <>
       <Header />
       <Map />
-    </div>
+    </>
   );
 }
 

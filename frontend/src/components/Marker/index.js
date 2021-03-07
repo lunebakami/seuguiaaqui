@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
+import RoomIcon from '@material-ui/icons/RoomTwoTone';
+import InfoWindow from '../utils/InfoWindow';
 
 import './styles.css';
 
-function Marker() {
-  return <div className="pin2" />;
+function Marker({ place }) {
+  const [show, setShow] = useState(false);
+
+  const closeInfoWindow = useCallback(() => {
+    setShow(false);
+  }, [show]);
+
+  return (
+    <>
+      <RoomIcon
+        onClick={() => {
+          setShow(true);
+        }}
+        style={{ fontSize: 45 }}
+        className="marker-icon"
+      />
+      {show && <InfoWindow place={place} close={closeInfoWindow} />}
+    </>
+  );
 }
 
 export default Marker;
