@@ -23,6 +23,16 @@
   align-items: center;
 }
 
+.modal-header span {
+  display: flex;
+  align-content: flex-end;
+  width: 50px;
+}
+
+.modal-header span h3 {
+  color: rgba(0, 0, 0, 0.8);
+}
+
 .modal-header button#btn-close {
   color: white;
   width: 30px;
@@ -71,4 +81,11 @@ form#login-form button {
   border-radius: 5px;
   background-image: linear-gradient(to left, #3a0ca3, #7209b7, #b5179e);
   color: white;
+}
+
+.error-message {
+  text-align: center;
+  margin-bottom: 10px;
+  color: red;
+  font-size: medium;
 }
