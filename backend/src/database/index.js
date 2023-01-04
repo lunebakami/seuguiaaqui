@@ -14,10 +14,19 @@ class Database {
   }
 
   async init() {
-    this.connection = new Sequelize(databaseConfig);
-    models
-      .map(model => model.init(this.connection))
-      .map(model => model.associate && model.associate(this.connection.models));
+    try {
+      this.connection = new Sequelize(databaseConfig);
+      models
+        .map(model => model.init(this.connection))
+        .map(
+          model => model.associate && model.associate(this.connection.models)
+        );
+
+      await this.connection.authenticate();
+      console.log('Database connection successful');
+    } catch (error) {
+      console.error(error);
+    }
   }
 }
 
