@@ -5,11 +5,13 @@ import Marker from '../Marker';
 import './styles.css';
 
 export default function SimpleMap() {
-  const [events] = useState([
+  // TODO: get markers(enterprises) from api
+  const [markers] = useState([
     {
       // -4.9685303,-39.017307
       name: 'Qx01',
       description: 'hello',
+      phone: '85991169461',
       latitude: -4.9685303,
       longitude: -39.017307,
     },
@@ -17,6 +19,7 @@ export default function SimpleMap() {
       // -4.968554, -39.016205
       name: 'Qx03',
       description: 'world',
+      phone: '85991169461',
       latitude: -4.968554,
       longitude: -39.016205,
     },
@@ -24,6 +27,7 @@ export default function SimpleMap() {
       // -4.967661, -39.019072
       name: 'Qx02',
       description: 'js',
+      phone: '85991169461',
       latitude: -4.967661,
       longitude: -39.019072,
     },
@@ -39,19 +43,23 @@ export default function SimpleMap() {
 
   return (
     // Important! Always set the container height explicitly
-    <div id="map" style={{ height: '839px', width: '100%' }}>
+    <div id="map" style={{ height: '90vh', width: '100%' }}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: 'AIzaSyDpBv91kLTLsHY8PK4JpY0R3iwrDWg4-jk' }}
+        bootstrapURLKeys={{ key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY }}
         defaultCenter={prop.center}
         defaultZoom={prop.zoom}
+        yesIWantToUseGoogleMapApiInternals
+        options={{
+          clickableIcons: false,
+        }}
       >
-        {events.map((event) => (
+        {markers.map((marker) => (
           <Marker
-            key={event.latitude}
-            lat={event.latitude}
-            lng={event.longitude}
-            place={event}
-            text={event.description}
+            key={marker.latitude}
+            lat={marker.latitude}
+            lng={marker.longitude}
+            place={marker}
+            text={marker.description}
           />
         ))}
       </GoogleMapReact>

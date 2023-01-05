@@ -1,16 +1,16 @@
 div.info-window {
+  display: inline-block;
   cursor: default;
   position: relative;
   bottom: 100px;
   left: -45px;
   margin-top: -20px;
   width: 220px;
-  height: 60px;
   background-color: white;
   box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.3);
-  padding: 10;
+  padding: 3px;
   font-size: 14px;
-  z-index: 1;
+  z-index: 5;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -18,15 +18,15 @@ div.info-window {
 }
 
 div.content {
-  margin-top: 3px;
+  margin-top: 5px;
   margin-left: 5px;
+  padding-bottom: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-div.info-window div {
-  width: 5px;
-}
-
-div.info-window div span {
+div.info-window div span#close {
   border: 0;
   border-radius: 5px;
   background-color: white;
