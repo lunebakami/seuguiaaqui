@@ -4,7 +4,7 @@ import InfoWindow from '../utils/InfoWindow';
 
 import './styles.css';
 
-function Marker({ place }) {
+function Marker({ place, setShowModal }) {
   const [show, setShow] = useState(false);
 
   const closeInfoWindow = useCallback(() => {
@@ -20,7 +20,13 @@ function Marker({ place }) {
         style={{ fontSize: 45 }}
         className="marker-icon"
       />
-      {show && <InfoWindow place={place} close={closeInfoWindow} />}
+      {show && (
+        <InfoWindow
+          place={place}
+          close={closeInfoWindow}
+          setShowModal={setShowModal}
+        />
+      )}
     </>
   );
 }

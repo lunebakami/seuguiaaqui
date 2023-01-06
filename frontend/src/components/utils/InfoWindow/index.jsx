@@ -2,14 +2,17 @@ import React from 'react';
 
 import './styles.css';
 
-export default function InfoWindow({ place, close }) {
+export default function InfoWindow({ place, close, setShowModal }) {
   return (
     <div className="info-window">
       <div className="content">
         <span>{place.name}</span>
         <span>{place.description}</span>
         <span>{place.phone}</span>
-        <span>View Details</span> {/** TODO: Modal with more details */}
+        <span id="details" onClick={() => setShowModal(true)}>
+          {' '}
+          View Details
+        </span>{' '}
       </div>
       <div>
         <span

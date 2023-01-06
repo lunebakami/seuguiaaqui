@@ -39,3 +39,7 @@ div.info-window div span#close {
   cursor: pointer;
   justify-content: flex-end;
 }
+
+span#details {
+  cursor: pointer;
+}

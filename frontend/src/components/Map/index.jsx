@@ -3,8 +3,11 @@ import GoogleMapReact from 'google-map-react';
 
 import Marker from '../Marker';
 import './styles.css';
+import MarkerModal from '../utils/MarkerModal';
 
 export default function SimpleMap() {
+  const [showModal, setShowModal] = useState(false);
+
   // TODO: get markers(enterprises) from api
   const [markers] = useState([
     {
@@ -54,13 +57,21 @@ export default function SimpleMap() {
         }}
       >
         {markers.map((marker) => (
-          <Marker
-            key={marker.latitude}
-            lat={marker.latitude}
-            lng={marker.longitude}
-            place={marker}
-            text={marker.description}
-          />
+          <>
+            <Marker
+              key={marker.latitude}
+              lat={marker.latitude}
+              lng={marker.longitude}
+              place={marker}
+              text={marker.description}
+              setShowModal={setShowModal}
+            />
+            <MarkerModal
+              id={marker.name}
+              show={showModal}
+              onClose={() => setShowModal(false)}
+            />
+          </>
         ))}
       </GoogleMapReact>
     </div>
