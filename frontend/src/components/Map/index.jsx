@@ -38,8 +38,8 @@ export default function SimpleMap() {
 
   const prop = {
     center: {
-      lat: -4.968586,
-      lng: -39.016193,
+      lat: Number(import.meta.env.VITE_DEFAULT_LAT),
+      lng: Number(import.meta.env.VITE_DEFAULT_LONG),
     },
     zoom: 16,
   };
